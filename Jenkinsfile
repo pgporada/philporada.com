@@ -10,13 +10,8 @@ pipeline {
     }
 
     stages {
-        stage('Minify files') {
-            steps {
+        stage('Build and deploy') {
                 sh 'bash ci-scripts/minify.sh'
-            }
-        }
-        stage('Copy files over to the webserver') {
-            steps {
                 sh 'bash ci-scripts/prep-and-rsync.sh'
             }
         }

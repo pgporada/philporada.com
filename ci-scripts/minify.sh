@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
 set -x
-which minify
-stat $(which minify)
+PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
 minify -r site/ -o site/

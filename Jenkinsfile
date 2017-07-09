@@ -6,16 +6,16 @@ pipeline {
     agent any
 
     triggers {
-        pollSCM('H/1 * * * *')
+        pollSCM('*/5 * * * *')
     }
 
     stages {
-        stage('\u27A1 Minify files') {
+        stage('Minify files') {
             steps {
                 sh 'bash ci-scripts/minify.sh'
             }
         }
-        stage('\u27A1 Copy files over to the webserver') {
+        stage('Copy files over to the webserver') {
             steps {
                 sh 'bash ci-scripts/prep-and-rsync.sh'
             }

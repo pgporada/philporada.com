@@ -11,6 +11,7 @@ pipeline {
 
     stages {
         stage('Build and deploy') {
+            steps {
                 sh 'bash ci-scripts/minify.sh'
                 sh 'bash ci-scripts/prep-and-rsync.sh'
             }

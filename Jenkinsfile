@@ -1,12 +1,14 @@
 node {
-    stage('Checkout code') {
-        git 'REPO'
-    }
+    checkout scm
 }
+
 pipeline {
+    agent any
+
     triggers {
         pollSCM('* * * * *')
     }
+
     stages {
         stage('\u27A1 Do something') {
             steps {
